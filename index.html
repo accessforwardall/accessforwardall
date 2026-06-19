@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elizabeth Sohn — Web Producer, Content Operations & Accessibility</title>
+<meta name="description" content="Portfolio of Elizabeth Sohn: 25+ years of accessible web publishing, content operations, and information architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F6F4;        /* cool warm-white */
+    --ink:#15201D;          /* near-black, warm-cool */
+    --ink-soft:#3C4A45;
+    --teal:#0E4F47;         /* primary — clarity/trust */
+    --teal-deep:#0A3A34;
+    --gold:#8A5E12;         /* sparing accent (AA on paper) */
+    --line:#D7DCD6;
+    --tile:#E4EAE5;
+    --focus:#0E4F47;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;} }
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;}
+
+  /* accessibility: skip link + focus */
+  .skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#fff;padding:12px 18px;z-index:100;border-radius:0 0 8px 0;}
+  .skip:focus{left:0;}
+  a{color:var(--teal);text-underline-offset:3px;}
+  a:hover{text-decoration-thickness:2px;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* header / nav */
+  header.site{position:sticky;top:0;background:rgba(244,246,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50;}
+  .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;}
+  .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;}
+  nav.primary ul{list-style:none;display:flex;gap:22px;}
+  nav.primary a{color:var(--ink-soft);text-decoration:none;font-size:15px;font-weight:500;}
+  nav.primary a:hover{color:var(--teal);text-decoration:underline;}
+
+  /* hero */
+  .hero{padding:84px 0 64px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,6.4vw,62px);line-height:1.04;letter-spacing:-.015em;max-width:16ch;}
+  h1 .accent{color:var(--teal);}
+  .lede{margin-top:24px;font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--ink-soft);max-width:58ch;}
+  .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;font-size:15px;}
+  .hero-meta a{font-weight:600;text-decoration:none;}
+  .hero-meta a:hover{text-decoration:underline;}
+  .a11y-badge{display:inline-flex;align-items:center;gap:9px;margin-top:30px;padding:9px 15px;border:1px solid var(--line);border-radius:100px;font-size:13.5px;color:var(--ink-soft);background:#fff;}
+  .a11y-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);flex:none;}
+
+  /* section heading */
+  .sec{padding:72px 0;border-bottom:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:40px;}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.01em;}
+  .sec-head .count{font-size:14px;color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums;}
+
+  /* project list */
+  .project{display:grid;grid-template-columns:300px 1fr;gap:36px;padding:38px 0;border-top:1px solid var(--line);}
+  .project:first-of-type{border-top:none;padding-top:0;}
+  .shot{aspect-ratio:16/10;background:var(--tile);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;color:var(--ink-soft);}
+  .shot .ph-label{font-size:13px;font-weight:600;}
+  .shot .ph-sub{font-size:12px;margin-top:5px;color:#7c8983;}
+  .project h3{font-family:'Fraunces',serif;font-weight:600;font-size:23px;line-height:1.15;}
+  .project h3 a{color:var(--ink);text-decoration:none;}
+  .project h3 a:hover{color:var(--teal);text-decoration:underline;}
+  .meta{margin:14px 0 12px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14.5px;}
+  .meta dt{color:var(--gold);font-weight:600;}
+  .meta dd{color:var(--ink-soft);}
+  .project p{font-size:15.5px;color:var(--ink-soft);max-width:62ch;}
+  .tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .tags li{font-size:12.5px;font-weight:500;color:var(--teal-deep);background:#E2EBE8;border-radius:5px;padding:4px 10px;}
+  .visit{display:inline-block;margin-top:16px;font-weight:600;font-size:14.5px;text-decoration:none;}
+  .visit:hover{text-decoration:underline;}
+  .visit::after{content:" \2197";}
+
+  /* about */
+  .about p{font-size:clamp(17px,2.1vw,19px);max-width:64ch;margin-bottom:18px;color:var(--ink);}
+  .about p.lead{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,25px);line-height:1.4;color:var(--ink);}
+
+  /* capabilities */
+  .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;}
+  .cap h3{font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+  .cap p{font-size:15px;color:var(--ink-soft);}
+
+  /* footer / contact */
+  footer.site{background:var(--teal);color:var(--paper);padding:72px 0 40px;}
+  footer.site h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,4vw,40px);color:#fff;}
+  footer .contact-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 30px;font-size:17px;}
+  footer a{color:#EAF2F0;font-weight:600;text-underline-offset:3px;}
+  footer a:hover{color:#fff;}
+  footer :focus-visible{outline-color:#EAF2F0;}
+  footer .colophon{margin-top:46px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);font-size:13.5px;color:#C4D6D2;max-width:62ch;}
+
+  /* edit banner — screen only */
+  .editnote{background:#fff3d6;border:1px solid #e4c976;color:#6b531a;font-size:13.5px;line-height:1.55;padding:13px 28px;}
+  .editnote b{color:#4a3a12;}
+  .editnote .wrap2{max-width:1080px;margin:0 auto;padding:0 0;}
+
+  /* load motion */
+  .fade{opacity:0;transform:translateY(12px);animation:up .7s ease forwards;}
+  .fade.d1{animation-delay:.08s;} .fade.d2{animation-delay:.16s;}
+  @keyframes up{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){ .fade{opacity:1;transform:none;animation:none;} }
+
+  @media (max-width:760px){
+    .project{grid-template-columns:1fr;gap:18px;}
+    nav.primary{display:none;}
+    .hero{padding:56px 0 44px;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="editnote"><div class="wrap"><b>Before publishing:</b> replace the placeholder image tiles with real screenshots (give each a descriptive <code>alt</code> text), add each project’s live URL where it says “Add live URL,” and add your LinkedIn/portfolio links in the footer. To publish free: drag this file (renamed <code>index.html</code>) onto app.netlify.com/drop.</div></div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="wordmark" href="#top">Elizabeth&nbsp;Sohn</a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="wrap">
+      <p class="eyebrow fade">Web Producer · Content Operations · Accessibility</p>
+      <h1 id="h1" class="fade d1">I make complex information <span class="accent">clear, structured, and usable by everyone.</span></h1>
+      <p class="lede fade d2">25+ years building and publishing accessible web content — from multi-agency public-information sites to educational tools — in Cascade CMS and beyond. Trained as a graphic designer; focused on information architecture, quality, and helping content teams work confidently.</p>
+      <div class="hero-meta fade d2">
+        <a href="#work">See selected work ↓</a>
+        <a href="mailto:elisohn@gmail.com">elisohn@gmail.com</a>
+        <span>Las Cruces, NM · open to remote / relocation</span>
+      </div>
+      <p class="a11y-badge fade d2"><span class="dot" aria-hidden="true"></span> This site is built to WCAG 2.2 AA — keyboard-navigable, screen-reader friendly, reduced-motion aware.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="count">5 projects</span></div>
+
+      <article class="project">
+        <div class="shot" role="img" aria-label="Screenshot placeholder for the New World Screwworm awareness site">
+          <span class="ph-label">Add screenshot</span><span class="ph-sub">screwwormnm.org home page</span>
+        </div>
+        <div>
+          <h3><a href="https://screwwormnm.org">New World Screwworm Awareness</a></h3>
+          <dl class="meta">
+            <dt>Role</dt><dd>Web producer &amp; content operations</dd>
+            <dt>Focus</dt><dd>Information architecture · accessible publishing</dd>
+          </dl>
+          <p>Synthesized technical material from four state agencies (NMDA, NMLB, NMDOH, NMDGF) into one public-health resource. Built the information architecture and accessible Cascade CMS site for distinct audiences — livestock owners, veterinarians, wildlife and healthcare personnel, pet owners, and the general public — informing the public without causing alarm.</p>
+          <ul class="tags"><li>Cascade CMS</li><li>Information Architecture</li><li>WCAG 2.1</li><li>Multi-stakeholder</li></ul>
+          <a class="visit" href="https://screwwormnm.org">Visit screwwormnm.org</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot" role="img" aria-label="Screenshot placeholder for the NMSU Meat Lab website">
+          <span class="ph-label">Add screenshot</span><span class="ph-sub">NMSU Meat Lab site</span>
+        </div>
+        <div>
+          <h3>NMSU Meat Lab</h3>
+          <dl class="meta">
+            <dt>Role</dt><dd>Web design &amp; build</dd>
+            <dt>Focus</dt><dd>Accessible components · scheduling integration</dd>
+          </dl>
+          <p>Designed and built an accessible site in Cascade CMS featuring a pause/play carousel, an embedded Microsoft Bookings scheduling flow, brand-aligned navigation, and optimized imagery — balancing visual polish with keyboard and screen-reader access.</p>
+          <ul class="tags"><li>Cascade CMS</li><li>Accessible components</li><li>Booking integration</li><li>Brand</li></ul>
+          <a class="visit" href="#add-url">Add live URL</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot" role="img" aria-label="Screenshot placeholder for the New Mexico AgrAbility website redesign">
+          <span class="ph-label">Add screenshot</span><span class="ph-sub">NM AgrAbility redesign</span>
+        </div>
+        <div>
+          <h3>New Mexico AgrAbility</h3>
+          <dl class="meta">
+            <dt>Role</dt><dd>Redesign &amp; accessibility</dd>
+            <dt>Focus</dt><dd>Card-based IA · accessible UI patterns</dd>
+          </dl>
+          <p>Redesigned the site around clear card-based sections and a custom, fully accessible link-and-button system — improving navigation and readability while keeping the build maintainable within Cascade CMS.</p>
+          <ul class="tags"><li>Redesign</li><li>Accessible UI patterns</li><li>Cascade CMS</li></ul>
+          <a class="visit" href="#add-url">Add live URL</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot" role="img" aria-label="Screenshot placeholder for the Learning Games Lab Toolkit">
+          <span class="ph-label">Add screenshot</span><span class="ph-sub">Learning Games Lab Toolkit</span>
+        </div>
+        <div>
+          <h3>Learning Games Lab Toolkit</h3>
+          <dl class="meta">
+            <dt>Role</dt><dd>WCAG remediation &amp; QA</dd>
+            <dt>Focus</dt><dd>Accessibility audit across a multi-page tool</dd>
+          </dl>
+          <p>Conducted a full WCAG 2.1 audit and remediation across every page of the toolkit — correcting heading structure, color contrast, alt text, and keyboard navigation so the educational resource works for all users.</p>
+          <ul class="tags"><li>WCAG 2.1</li><li>Remediation</li><li>QA</li><li>Education</li></ul>
+          <a class="visit" href="#add-url">Add live URL</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="shot" role="img" aria-label="Screenshot placeholder for Math Snacks educational games">
+          <span class="ph-label">Add screenshot</span><span class="ph-sub">Math Snacks games &amp; apps</span>
+        </div>
+        <div>
+          <h3>Math Snacks</h3>
+          <dl class="meta">
+            <dt>Role</dt><dd>QA &amp; user testing</dd>
+            <dt>Focus</dt><dd>Interactive educational media</dd>
+          </dl>
+          <p>QA- and user-tested interactive educational games and apps — validating functionality, content accuracy, and behavior across browsers and devices before release, catching the small breaks that slip past a quick look.</p>
+          <ul class="tags"><li>QA testing</li><li>Usability</li><li>Educational media</li></ul>
+          <a class="visit" href="#add-url">Add live URL</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec about" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="about-h">About</h2></div>
+      <p class="lead">Communication and helping people have been the throughline of my whole career.</p>
+      <p>Graphic design is how I make ideas clear; accessibility is how I make sure everyone can receive them; and documentation is how I share what I know so others can do the work themselves. For 25+ years at NMSU I’ve built, published, and quality-checked content across a large institutional web portfolio — and I founded Access Forward LLC to bring that same accessible, well-organized approach to other organizations.</p>
+      <p>I hold an MFA in Graphic Design and certifications including ISC2 CC, with a CPACC accessibility credential in progress. I care about clarity, quality, and lowering the barrier for the next person.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="capabilities" aria-labelledby="cap-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="cap-h">Capabilities</h2></div>
+      <div class="caps">
+        <div class="cap"><h3>Publishing</h3><p>Cascade CMS, templated &amp; component-based pages, content collections, publishing governance.</p></div>
+        <div class="cap"><h3>Quality &amp; QA</h3><p>Staging-to-production review; copy, link, and rendering checks; game &amp; app testing; WCAG/508 auditing with Siteimprove.</p></div>
+        <div class="cap"><h3>Web craft</h3><p>HTML, CSS, Bootstrap, responsive and semantic/ARIA markup; flagging rendering issues to design &amp; dev.</p></div>
+        <div class="cap"><h3>Knowledge-sharing</h3><p>Documentation, how-to guides, onboarding, and AI-assisted (Claude) content workflows.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h">Let’s talk.</h2>
+    <div class="contact-links">
+      <a href="mailto:elisohn@gmail.com">elisohn@gmail.com</a>
+      <a href="tel:+15755718478">575-571-8478</a>
+      <span style="color:#C4D6D2">Las Cruces, NM</span>
+      <a href="#add-linkedin">Add LinkedIn</a>
+    </div>
+    <p class="colophon">Designed and built by Elizabeth Sohn to WCAG 2.2 AA — semantic landmarks, visible focus states, keyboard navigation, and reduced-motion support throughout. The site is the work sample.</p>
+  </div>
+</footer>
+
+</body>
+</html>
