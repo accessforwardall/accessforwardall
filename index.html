@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elizabeth Sohn — Web Producer, Content Operations & Accessibility</title>
-<meta name="description" content="Portfolio of Elizabeth Sohn: 25+ years of accessible web publishing, content operations, and information architecture.">
+<meta name="description" content="Portfolio of Elizabeth Sohn: web publishing, content operations, accessibility, and brand design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
   .eyebrow{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
   h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,6.4vw,62px);line-height:1.04;letter-spacing:-.015em;max-width:18ch;}
   h1 .accent{color:var(--teal);}
-  .lede{margin-top:24px;font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--ink-soft);max-width:58ch;}
+  .lede{margin-top:24px;font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--ink-soft);max-width:60ch;}
   .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;font-size:15px;}
   .hero-meta a{font-weight:600;text-decoration:none;}
   .hero-meta a:hover{text-decoration:underline;}
@@ -47,7 +47,6 @@
   .project{display:grid;grid-template-columns:300px 1fr;gap:36px;padding:38px 0;border-top:1px solid var(--line);align-items:start;}
   .project:first-of-type{border-top:none;padding-top:0;}
   .project > *{min-width:0;}
-  /* shot: shared frame for both <img> and placeholder <div> */
   .shot{width:100%;aspect-ratio:16/10;border:1px solid var(--line);border-radius:10px;}
   img.shot{object-fit:cover;display:block;height:auto;}
   div.shot{background:var(--tile);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;color:var(--ink-soft);}
@@ -65,6 +64,7 @@
   .visit{display:inline-block;margin-top:16px;font-weight:600;font-size:14.5px;text-decoration:none;}
   .visit:hover{text-decoration:underline;}
   .visit::after{content:" \2197";}
+  .status{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:#7c8983;}
   .about p{font-size:clamp(17px,2.1vw,19px);max-width:64ch;margin-bottom:18px;color:var(--ink);}
   .about p.lead{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,25px);line-height:1.4;color:var(--ink);}
   .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;}
@@ -107,7 +107,7 @@
     <div class="wrap">
       <p class="eyebrow fade">Web Producer &middot; Content Operations &middot; Accessibility</p>
       <h1 id="h1" class="fade d1">Turning complex information into <span class="accent">clear, accessible digital experiences.</span></h1>
-      <p class="lede fade d2">25+ years building and publishing accessible web content &mdash; from multi-agency public-information sites to educational tools &mdash; in Cascade CMS and beyond. Trained as a graphic designer; focused on information architecture, quality, and helping content teams work confidently.</p>
+      <p class="lede fade d2">25+ years building and publishing accessible web content across a large institutional portfolio, from multi-agency public-information sites to educational tools. Trained as a graphic designer, focused on information architecture, quality, and helping content teams work confidently.</p>
       <div class="hero-meta fade d2">
         <a href="#work">See selected work &darr;</a>
         <a href="mailto:accessforwardco@gmail.com">accessforwardco@gmail.com</a>
@@ -119,78 +119,84 @@
   <section class="sec" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="count">5 projects</span></div>
+
       <article class="project">
-        <img class="shot" src="nws.jpg" alt="Home page of the New World Screwworm Awareness site for New Mexico, with the maroon navigation bar and the headline Be Alert, Not Alarmed" width="1200" height="750">
+        <img class="shot" src="nws.jpg" alt="New World Screwworm Awareness home page for New Mexico, with a maroon navigation bar and the headline Be Alert, Not Alarmed" width="1200" height="750">
         <div>
           <h3><a href="https://screwwormnm.org">New World Screwworm Awareness</a></h3>
           <dl class="meta">
             <dt>Role</dt><dd>Web producer &amp; content operations</dd>
             <dt>Focus</dt><dd>Information architecture &middot; accessible publishing</dd>
           </dl>
-          <p>Built the information architecture and a hand-coded HTML/CSS site for distinct audiences — livestock owners, veterinarians, wildlife and healthcare personnel, pet owners, and the general public — using AI-assisted workflows to help organize content and speed up the coding. The result informs the public without causing alarm.</p>
-          <ul class="tags"><li>HTML/CSS</li><li>Information Architecture</li><li>WCAG 2.1</li><li>Multi-stakeholder</li></ul>
+          <p>Synthesized technical material from four state agencies (NMDA, NMLB, NMDOH, NMDGF) into one public-health resource. Built the information architecture and hand-coded the site in HTML, CSS, and Bootstrap, using AI-assisted workflows to help organize content and speed up the coding, for distinct audiences from livestock owners and veterinarians to pet owners and the general public.</p>
+          <ul class="tags"><li>HTML/CSS</li><li>AI-assisted</li><li>Information Architecture</li><li>WCAG 2.1</li></ul>
           <a class="visit" href="https://screwwormnm.org">Visit screwwormnm.org</a>
         </div>
       </article>
+
       <article class="project">
-         <img class="shot" src="food-lab.jpg" alt="Home page of the NMSU ACES Food Lab, with the banner image" width="1200" height="750">
+        <img class="shot" src="food-lab.jpg" alt="NMSU ACES Food Lab home page, with a banner image across the top" width="1200" height="750">
         <div>
           <h3>NMSU Food Lab</h3>
           <dl class="meta">
             <dt>Role</dt><dd>Web design &amp; build</dd>
             <dt>Focus</dt><dd>Accessible components &middot; scheduling integration</dd>
           </dl>
-          <p>Designed and built an accessible site in Cascade CMS featuring a pause/play carousel, an embedded Microsoft Bookings scheduling flow, brand-aligned navigation, and optimized imagery &mdash; balancing visual polish with keyboard and screen-reader access.</p>
+          <p>Designed and built an accessible site in Cascade CMS featuring a pause/play carousel, an embedded Microsoft Bookings scheduling flow, brand-aligned navigation, and optimized imagery, balancing visual polish with keyboard and screen-reader access.</p>
           <ul class="tags"><li>Cascade CMS</li><li>Accessible components</li><li>Booking integration</li><li>Brand</li></ul>
           <a class="visit" href="https://fsl.nmsu.edu/">Visit Food Lab</a>
         </div>
       </article>
+
       <article class="project">
-         <img class="shot" src="agrability.jpg" alt="Home page of the Agrability site for New Mexico, with the Agrability logo" width="1200" height="750">
+        <img class="shot" src="rawcs.jpg" alt="RAWCS home page at New Mexico State University, showing the RAWCS logo and branding" width="1200" height="750">
         <div>
-          <h3>New Mexico AgrAbility</h3>
+          <h3><a href="https://rawcs.nmsu.edu/">RAWCS &mdash; NMSU</a></h3>
           <dl class="meta">
-            <dt>Role</dt><dd>Redesign &amp; accessibility</dd>
-            <dt>Focus</dt><dd>Card-based IA &middot; accessible UI patterns</dd>
+            <dt>Role</dt><dd>Visual design, branding &amp; logo</dd>
+            <dt>Focus</dt><dd>Brand identity &middot; non-standard Cascade template</dd>
           </dl>
-          <p>Redesigned the site around clear card-based sections and a custom, fully accessible link-and-button system &mdash; improving navigation and readability while keeping the build maintainable within Cascade CMS.</p>
-          <ul class="tags"><li>Redesign</li><li>Accessible UI patterns</li><li>Cascade CMS</li></ul>
-          <a class="visit" href="#add-url">In development</a>
+          <p>Designed the look, layout, and branding, and created the logo and logo usage guide. The site was built in Cascade by NMSU's Web Communication Services (the team that manages the main university site, web templates, and the CMS). When I later took over Cascade duties, I learned to maintain it within a non-standard template, locating and working with its custom navigation, headers, and footers.</p>
+          <ul class="tags"><li>Branding</li><li>Logo design</li><li>Cascade CMS</li><li>Template maintenance</li></ul>
+          <a class="visit" href="https://rawcs.nmsu.edu/">Visit rawcs.nmsu.edu</a>
         </div>
       </article>
+
       <article class="project">
-        <img class="shot" src="lgltool.jpg" alt="Learning Games Lab Toolkit home page with a banner showing three participants in the Game Lab" width="1200" height="750">
+        <img class="shot" src="lgltool.jpg" alt="Learning Games Lab Toolkit home page, with a banner showing three participants in the Game Lab" width="1200" height="750">
         <div>
           <h3>Learning Games Lab Toolkit</h3>
           <dl class="meta">
             <dt>Role</dt><dd>WCAG remediation &amp; QA</dd>
             <dt>Focus</dt><dd>Accessibility audit across a multi-page tool</dd>
           </dl>
-          <p>Conducted a full WCAG 2.1 audit and remediation across every page of the toolkit &mdash; correcting heading structure, color contrast, alt text, and keyboard navigation so the educational resource works for all users.</p>
+          <p>Conducted a full WCAG 2.1 audit and remediation across every page of the toolkit, correcting heading structure, color contrast, alt text, and keyboard navigation so the educational resource works for all users.</p>
           <ul class="tags"><li>WCAG 2.1</li><li>Remediation</li><li>QA</li><li>Education</li></ul>
-          <a class="visit" href="https://learninggameslabtoolkit.org/index.html">LGL Toolkit</a>
+          <a class="visit" href="https://learninggameslabtoolkit.org/index.html">Visit LGL Toolkit</a>
         </div>
       </article>
+
       <article class="project">
         <img class="shot" src="themepark.jpg" alt="Theme Park Kitchen home page, with a banner showing game characters and the Theme Park Kitchen logo" width="1200" height="750">
         <div>
-          <h3>Theme Park</h3>
+          <h3>Theme Park Kitchen</h3>
           <dl class="meta">
             <dt>Role</dt><dd>QA &amp; user testing</dd>
             <dt>Focus</dt><dd>Interactive educational media</dd>
           </dl>
-          <p>QA- and user-tested interactive educational games and apps &mdash; validating functionality, content accuracy, and behavior across browsers and devices before release, catching the small breaks that slip past a quick look.</p>
+          <p>QA- and user-tested interactive educational games and apps, validating functionality, content accuracy, and behavior across browsers and devices before release, catching the small breaks that slip past a quick look.</p>
           <ul class="tags"><li>QA testing</li><li>Usability</li><li>Educational media</li></ul>
-          <a class="visit" href="https://themeparkkitchen.com/">Theme Park</a>
+          <a class="visit" href="https://themeparkkitchen.com/">Visit Theme Park Kitchen</a>
         </div>
       </article>
+
     </div>
   </section>
   <section class="sec about" id="about" aria-labelledby="about-h">
     <div class="wrap">
       <div class="sec-head"><h2 id="about-h">About</h2></div>
       <p class="lead">Communication and helping people have been the throughline of my whole career.</p>
-      <p>Graphic design is how I make ideas clear; accessibility is how I make sure everyone can receive them; and documentation is how I share what I know so others can do the work themselves. For 25+ years at NMSU I&rsquo;ve built, published, and quality-checked content across a large institutional web portfolio &mdash; and I founded Access Forward LLC to bring that same accessible, well-organized approach to other organizations.</p>
+      <p>Graphic design is how I make ideas clear; accessibility is how I make sure everyone can receive them; and documentation is how I share what I know so others can do the work themselves. For 25+ years at NMSU I've built, published, and quality-checked content across a large institutional web portfolio, and I founded Access Forward LLC to bring that same accessible, well-organized approach to other organizations.</p>
       <p>I hold an MFA in Graphic Design and certifications including ISC2 CC, with a CPACC accessibility credential in progress. I care about clarity, quality, and lowering the barrier for the next person.</p>
     </div>
   </section>
@@ -200,7 +206,7 @@
       <div class="caps">
         <div class="cap"><h3>Publishing</h3><p>Cascade CMS, templated &amp; component-based pages, content collections, publishing governance.</p></div>
         <div class="cap"><h3>Quality &amp; QA</h3><p>Staging-to-production review; copy, link, and rendering checks; game &amp; app testing; WCAG/508 auditing with Siteimprove.</p></div>
-        <div class="cap"><h3>Web craft</h3><p>HTML, CSS, Bootstrap, responsive and semantic/ARIA markup; flagging rendering issues to design &amp; dev.</p></div>
+        <div class="cap"><h3>Web &amp; design</h3><p>HTML, CSS, Bootstrap, responsive and semantic/ARIA markup; branding and logo design; Adobe Creative Suite.</p></div>
         <div class="cap"><h3>Knowledge-sharing</h3><p>Documentation, how-to guides, onboarding, and AI-assisted (Claude) content workflows.</p></div>
       </div>
     </div>
@@ -208,12 +214,11 @@
 </main>
 <footer class="site" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <h2 id="contact-h">Let&rsquo;s talk.</h2>
+    <h2 id="contact-h">Let's talk.</h2>
     <div class="contact-links">
       <a href="mailto:accessforwardco@gmail.com">accessforwardco@gmail.com</a>
       <a href="tel:+15755718478">575-571-8478</a>
       <span style="color:#C4D6D2">Las Cruces, NM</span>
-     
     </div>
     <p class="colophon">Designed and built by Elizabeth Sohn to WCAG 2.2 AA &mdash; semantic landmarks, visible focus states, keyboard navigation, and reduced-motion support throughout. The site is the work sample.</p>
   </div>
